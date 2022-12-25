@@ -10,3 +10,6 @@ When I'm not coding, you can find me binge-watching sci-fi movies, playing video
 
 Feel free to check out my projects and say hi! 👋
 
+### 📩 How to Reach Me
+💼 [LinkedIn](http://www.linkedin.com/in/hamza-attar)
+🐦 [Twitter](https://twitter.com/Hamza_01111011)
