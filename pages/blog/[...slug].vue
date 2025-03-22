@@ -195,18 +195,11 @@ const { data: post } = await useAsyncData(`blog-post-${slug.join('-')}`, () =>
     queryCollection('blog').path(`/blog/${slug}`).first()
 )
 
-// Add debugging
-console.log("Fetching blog post with slug:", slug.join('/'))
-console.log("Post found:", post.value)
-console.log("Full path being queried:", `/blog/${slug.join('/')}`)
-
 // If post not found, try a direct approach
 if (!post.value) {
-  console.log("Post not found with path query, trying direct query")
   const { data: directPost } = await useAsyncData(`direct-blog-post-${slug.join('-')}`, () =>
     queryContent(`/blog/${slug.join('/')}`).findOne()
   )
-  console.log("Direct query result:", directPost.value)
   
   if (directPost.value) {
     post.value = directPost.value
