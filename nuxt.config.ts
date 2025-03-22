@@ -55,7 +55,7 @@ export default defineNuxtConfig({
   // App Config
   app: {
     // This is crucial for GitHub Pages
-    baseURL: '/', // Keep it simple for now
+    baseURL: '/HamzaWebsite/', // Updated to include repository name
     buildAssetsDir: '/_nuxt/', // Don't use underscore to avoid GitHub Pages 404 handling
     head: {
       title: "Hamza's Website - Automation & Web Scraping Expert",
@@ -83,7 +83,7 @@ export default defineNuxtConfig({
   // Runtime config
   runtimeConfig: {
     public: {
-      baseURL: '/',
+      baseURL: '/HamzaWebsite/', // Updated to include repository name
     }
   },
 

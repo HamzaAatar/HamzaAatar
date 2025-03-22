@@ -9,18 +9,19 @@
     // GitHub Pages SPA redirect
     // Based on https://github.com/rafgraph/spa-github-pages
     (function() {
+      // Get the current URL path
       const path = window.location.pathname;
       const segments = path.split('/');
-      const repoName = segments[1]; // 'HamzaWebsite'
       
-      // Check if we're on a GitHub Pages site
-      if (repoName === 'HamzaWebsite') {
-        // Redirect to the base path with a hash route
-        window.location.href = '/HamzaWebsite/';
-      } else {
-        // For custom domains, just redirect to root
-        window.location.href = '/';
-      }
+      // Handle GitHub Pages
+      const baseURL = '/HamzaWebsite/';
+      const pathSegmentsToKeep = 1; // Keep the first segment after the repo name
+      
+      // Save the URL hash if any
+      const hash = window.location.hash;
+      
+      // Redirect to the baseURL
+      window.location.href = baseURL + path.slice(path.indexOf(segments[pathSegmentsToKeep + 1]) || path.length) + hash;
     })();
   </script>
 </head>
