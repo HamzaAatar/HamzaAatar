@@ -21,12 +21,12 @@ jobs:
       
       # Generate a 404.html file for GitHub Pages SPA routing
       - name: Create 404 page
-        run: mkdir -p .output/public && echo '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=/HamzaWebsite/"></head></html>' > .output/public/404.html
+        run: mkdir -p .output/public && echo '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=/HamzaAatar/"></head></html>' > .output/public/404.html
       
       # Build the site
       - name: Build site
         run: |
-          NUXT_APP_BASE_URL=/HamzaWebsite/ \
+          NUXT_APP_BASE_URL=/HamzaAatar/ \
           npx nuxt build --preset github_pages
       
       # Upload artifact
