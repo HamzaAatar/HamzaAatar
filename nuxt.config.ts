@@ -291,29 +291,29 @@ export default defineNuxtConfig({
     robotsTxt: false
   },
   
-  // Add Vite optimization options
-  vite: {
-    build: {
-      cssCodeSplit: true,
-      minify: 'terser',
-      terserOptions: {
-        compress: {
-          drop_console: process.env.NODE_ENV === 'production',
-          drop_debugger: process.env.NODE_ENV === 'production'
-        }
-      },
-      rollupOptions: {
-        output: {
-          manualChunks: {
-            'vue-bundle': ['vue', 'vue-router'],
-            'nuxt-bundle': ['nuxt', '@nuxt/content'],
-            'ui-bundle': ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode']
-          }
-        }
-      }
-    },
-    optimizeDeps: {
-      include: ['vue', 'vue-router']
-    }
-  }
+  // // Add Vite optimization options
+  // vite: {
+  //   build: {
+  //     cssCodeSplit: true,
+  //     minify: 'terser',
+  //     terserOptions: {
+  //       compress: {
+  //         drop_console: process.env.NODE_ENV === 'production',
+  //         drop_debugger: process.env.NODE_ENV === 'production'
+  //       }
+  //     },
+  //     rollupOptions: {
+  //       output: {
+  //         manualChunks: {
+  //           'vue-bundle': ['vue', 'vue-router'],
+  //           'nuxt-bundle': ['nuxt', '@nuxt/content'],
+  //           'ui-bundle': ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode']
+  //         }
+  //       }
+  //     }
+  //   },
+  //   optimizeDeps: {
+  //     include: ['vue', 'vue-router']
+  //   }
+  // }
 })
