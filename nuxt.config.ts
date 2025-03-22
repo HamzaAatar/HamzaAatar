@@ -4,11 +4,14 @@ export default defineNuxtConfig({
 
   // Disable auto-importing components
   components: {
-    dirs: []
+    dirs: [
+      '~/components'
+    ]
   },
 
   // CSS files
   css: [
+    '~/assets/css/critical.css',
     '~/assets/css/styles.css',
     '~/assets/css/animations.css',
   ],
@@ -144,9 +147,83 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel: 'canonical', href: 'https://hamza.dev' },
+        // Preconnect to Google Fonts
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap' }
+        // Remove regular stylesheet and use preload instead
+        { rel: 'preload', as: 'style', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap' },
+      ],
+      script: [
+        // Add non-blocking font loading script
+        {
+          innerHTML: `
+            (function() {
+              const fontLink = document.createElement('link');
+              fontLink.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap';
+              fontLink.rel = 'stylesheet';
+              fontLink.media = 'print';
+              fontLink.onload = function() {
+                this.media = 'all';
+                // Add font-loaded class to enable proper font styling
+                document.documentElement.classList.add('font-loaded');
+              };
+              document.head.appendChild(fontLink);
+            })();
+          `,
+          tagPosition: 'bodyClose'
+        }
+      ],
+      // Add font-display: swap as a style to ensure text remains visible during font loading
+      style: [
+        {
+          innerHTML: `
+            /* Inline a small subset of Inter 400 for critical text */
+            @font-face {
+              font-family: 'Inter';
+              font-style: normal;
+              font-weight: 400;
+              font-display: swap;
+              src: url(data:font/woff2;base64,d09GMgABAAAAAAKAAoAAAAABkAAAAIwAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAAhkQKYghECYESATQCJAMQCwoABCAFg3AHIBtKBoKUbQH3G8nA1uZFiXJ0YjbMl0yq8x35q5z4qnxE8LP935n7ZqcPDdJJNJtGbZKoJHESHfoaIUK2XU3rvvrmXRr9f5LKgXPNICJTdmFKW4K/7FbylbPIR8aQP3/Qf6EJXoDRrKFGI90AZ5EPX7LRxb+gX1IDrGgIQGuFZhb1G9k4NGgSW5+HKrSgA5SxqFAHJHM+8UOxlg78+MG9Gex9GpJUzXZATdIp3bW4XCpSaO3dw7yCnGBbWGf5h5sLXgVsTL2b1sSX4LOEBrDwH6lUl6qgdGhuRfk8AAAA) format('woff2');
+              unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            
+            @font-face {
+              font-family: 'Inter';
+              font-style: normal;
+              font-weight: 300;
+              font-display: swap;
+              src: url(https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuOKfAZJhiI2B.woff2) format('woff2');
+            }
+            @font-face {
+              font-family: 'Inter';
+              font-style: normal;
+              font-weight: 400;
+              font-display: swap;
+              src: url(https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZJhiI2B.woff2) format('woff2');
+            }
+            @font-face {
+              font-family: 'Inter';
+              font-style: normal;
+              font-weight: 500;
+              font-display: swap;
+              src: url(https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuI6fAZJhiI2B.woff2) format('woff2');
+            }
+            @font-face {
+              font-family: 'Inter';
+              font-style: normal;
+              font-weight: 600;
+              font-display: swap;
+              src: url(https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuGKYAZJhiI2B.woff2) format('woff2');
+            }
+            @font-face {
+              font-family: 'Inter';
+              font-style: normal;
+              font-weight: 700;
+              font-display: swap;
+              src: url(https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYAZJhiI2B.woff2) format('woff2');
+            }
+          `
+        }
       ]
     }
   },
@@ -169,9 +246,6 @@ export default defineNuxtConfig({
       contactLocation: process.env.NUXT_PUBLIC_CONTACT_LOCATION,
     }
   },
-
-  // Sitemap Configuration simplified to avoid type errors
-  sitemap: {},
 
   // Image optimization
   image: {

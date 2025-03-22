@@ -176,7 +176,9 @@
 </template>
 
 <script setup>
-import { computed, onMounted } from 'vue'
+import { computed, ref, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
+import { useCustomSeoMeta } from '~/composables/useSeoMeta';
 
 definePageMeta({
   layout: 'default'
@@ -261,7 +263,7 @@ onMounted(() => {
 })
 
 // SEO
-useSeoMeta({
+useCustomSeoMeta({
   title: () => post.value.title,
   description: () => post.value.description,
   ogTitle: () => post.value.title,

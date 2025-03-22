@@ -78,6 +78,8 @@
 
 <script setup>
 import { computed, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
+import { useCustomSeoMeta } from '~/composables/useSeoMeta'
 
 definePageMeta({
   layout: 'default'
@@ -135,7 +137,7 @@ onMounted(() => {
 })
 
 // SEO
-useSeoMeta({
+useCustomSeoMeta({
   title: () => `#${tag.value} - Blog Posts`,
   description: () => `Browse our collection of articles related to ${tag.value}`,
   ogTitle: () => `#${tag.value} - Blog Posts`,
