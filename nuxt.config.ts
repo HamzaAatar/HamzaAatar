@@ -1,0 +1,73 @@
+// https://nuxt.com/docs/api/configuration/nuxt-config
+export default defineNuxtConfig({
+  devtools: { enabled: true },
+
+  // Disable auto-importing components
+  components: {
+    dirs: []
+  },
+
+  // CSS files
+  css: [
+    '~/assets/css/styles.css',
+    '~/assets/css/animations.css',
+  ],
+
+  // Modules
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@nuxt/content',
+    '@nuxtjs/color-mode'
+  ],
+
+  // Content module configuration
+  content: {
+    // Default content configuration
+  },
+
+  // Color mode configuration
+  colorMode: {
+    preference: 'dark',
+    fallback: 'dark',
+    classSuffix: ''
+  },
+
+  // Route rules
+  routeRules: {
+    '/blog/**': { swr: 3600 }
+  },
+
+  // App Config
+  app: {
+    head: {
+      title: "Hamza's Website - Automation & Web Scraping Expert",
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'description', content: 'Hamza is a freelance developer specializing in automation solutions and web scraping to help businesses save time and resources.' },
+        { name: 'theme-color', content: '#1e293b' },
+        { property: 'og:title', content: "Hamza's Website - Automation & Web Scraping Expert" },
+        { property: 'og:description', content: 'Hamza is a freelance developer specializing in automation solutions and web scraping to help businesses save time and resources.' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:url', content: 'https://hamza.dev' },
+        { property: 'og:image', content: 'https://hamza.dev/images/social-banner.jpg' },
+        { name: 'twitter:card', content: 'summary_large_image' }
+      ],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap' }
+      ]
+    }
+  },
+
+  // Runtime config
+  runtimeConfig: {
+    public: {
+      // Public runtime config here
+    }
+  },
+
+  compatibilityDate: '2025-03-21'
+})
