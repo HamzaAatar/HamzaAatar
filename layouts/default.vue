@@ -3,7 +3,7 @@
     <SkipToContent />
     
     <!-- Header -->
-    <header class="bg-white dark:bg-gray-900 shadow-sm sticky top-0 z-10">
+    <header class="bg-white dark:bg-gray-900 shadow-sm sticky top-0 z-50">
       <div class="container mx-auto px-4 py-4">
         <div class="flex justify-between items-center">
           <div class="flex items-center space-x-8">
