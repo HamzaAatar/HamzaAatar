@@ -35,12 +35,10 @@ export default defineNuxtConfig({
               emoticon: true
             }
           },
-          // Disable remark-gfm
-          'remark-gfm': false,
-          // Add remark-oembed
-          'remark-oembed': {
-            // Options
-          }
+          'remark-oembed': {},
+          'remark-gfm': {
+            
+          },
         },
         rehypePlugins: {
           'rehype-figure': {
