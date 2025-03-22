@@ -18,6 +18,12 @@ export function useCustomSeoMeta(meta: {
   const title = meta.title || `${config.siteName} | Web Developer & Designer`;
   const description = meta.description || config.siteDescription;
   
+  // Ensure we have an absolute URL for canonical links
+  const baseUrl = config.siteUrl || 'https://hamzaaatar.github.io';
+  const canonicalUrl = meta.canonicalUrl 
+    ? (meta.canonicalUrl.startsWith('http') ? meta.canonicalUrl : `${baseUrl}${meta.canonicalUrl}`) 
+    : baseUrl;
+  
   useHead({
     title,
     meta: [
@@ -27,6 +33,7 @@ export function useCustomSeoMeta(meta: {
       { property: 'og:description', content: meta.ogDescription || description },
       { property: 'og:image', content: meta.ogImage || '/social-preview.jpg' },
       { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: canonicalUrl },
       // Twitter
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:title', content: meta.twitterTitle || title },
@@ -34,7 +41,7 @@ export function useCustomSeoMeta(meta: {
       { name: 'twitter:image', content: meta.twitterImage || '/social-preview.jpg' }
     ],
     link: [
-      { rel: 'canonical', href: meta.canonicalUrl || config.siteUrl }
+      { rel: 'canonical', href: canonicalUrl }
     ]
   });
 } 

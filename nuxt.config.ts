@@ -146,7 +146,7 @@ export default defineNuxtConfig({
         { property: 'og:title', content: 'Hamza | Web Developer & Designer' },
         { property: 'og:description', content: 'Professional web developer specializing in modern, accessible, high-performance websites and applications.' },
         { property: 'og:image', content: '/social-preview.jpg' },
-        { property: 'og:url', content: 'https://hamza.dev' },
+        { property: 'og:url', content: process.env.NUXT_PUBLIC_SITE_URL || 'https://hamzaaatar.github.io' },
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:title', content: 'Hamza | Web Developer & Designer' },
         { name: 'twitter:description', content: 'Professional web developer specializing in modern, accessible, high-performance websites and applications.' },
@@ -154,7 +154,7 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        { rel: 'canonical', href: 'https://hamza.dev' },
+        { rel: 'canonical', href: process.env.NUXT_PUBLIC_SITE_URL || 'https://hamzaaatar.github.io' },
         // Preconnect to Google Fonts
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
