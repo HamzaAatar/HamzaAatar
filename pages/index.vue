@@ -210,7 +210,7 @@
             <p class="text-gray-600 dark:text-gray-400 mb-6 pt-4">Hamza's custom automation scripts transformed our inventory management process. His solutions are robust, reliable, and exactly what we needed.</p>
             <div class="flex items-center">
               <div class="w-12 h-12 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden mr-4">
-                <div class="w-full h-full bg-gray-300 dark:bg-gray-600 flex items-center justify-center text-gray-600 dark:text-gray-400 font-bold text-lg">RJ</div>
+                <div class="w-full h-full bg-gray-300 dark:bg-gray-600 flex items-center justify-center text-gray-600 dark:text-white font-bold text-lg">RJ</div>
               </div>
               <div>
                 <div class="font-semibold text-gray-900 dark:text-white">Robert Johnson</div>
