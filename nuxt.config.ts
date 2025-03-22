@@ -83,7 +83,7 @@ export default defineNuxtConfig({
   // Runtime config
   runtimeConfig: {
     public: {
-      baseURL: '/HamzaWebsite',
+      baseURL: '/',
     }
   },
 
