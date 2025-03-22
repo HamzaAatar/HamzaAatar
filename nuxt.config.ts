@@ -16,8 +16,10 @@ export default defineNuxtConfig({
   // Modules
   modules: [
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/seo',
     '@nuxt/content',
-    '@nuxtjs/color-mode'
+    '@nuxtjs/color-mode',
+    '@nuxt/image',
   ],
 
   // Content module configuration (minimal to avoid TypeScript errors)
@@ -73,7 +75,19 @@ export default defineNuxtConfig({
 
   // Route rules
   routeRules: {
-    '/blog/**': { swr: 3600 }
+    '/': { prerender: true },
+    '/about': { prerender: true },
+    '/blog/**': { swr: 60 * 60 },
+    '/_nuxt/**': {
+      headers: {
+        'cache-control': 'public, max-age=31536000, immutable'
+      }
+    },
+    '/assets/**': {
+      headers: {
+        'cache-control': 'public, max-age=31536000, immutable'
+      }
+    }
   },
 
   // GitHub Pages deployment settings
@@ -93,30 +107,43 @@ export default defineNuxtConfig({
         '/blog/automating-workflows-with-n8n',
         '/contact'
       ]
+    },
+    // Enable compression
+    compressPublicAssets: {
+      gzip: true,
+      brotli: true
     }
   },
 
   // App Config
   app: {
     // This is crucial for GitHub Pages
-    baseURL: '/HamzaAatar/', // Updated to include repository name
+    baseURL: process.env.NUXT_PUBLIC_BASE_URL || '/HamzaAatar/',
     buildAssetsDir: '/_nuxt/', // Don't use underscore to avoid GitHub Pages 404 handling
     head: {
-      title: "Hamza's Website - Automation & Web Scraping Expert",
+      htmlAttrs: {
+        lang: process.env.NUXT_PUBLIC_SITE_LANGUAGE || 'en'
+      },
+      title: 'Hamza | Web Developer & Designer',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Hamza is a freelance developer specializing in automation solutions and web scraping to help businesses save time and resources.' },
-        { name: 'theme-color', content: '#1e293b' },
-        { property: 'og:title', content: "Hamza's Website - Automation & Web Scraping Expert" },
-        { property: 'og:description', content: 'Hamza is a freelance developer specializing in automation solutions and web scraping to help businesses save time and resources.' },
+        { name: 'description', content: 'Professional web developer specializing in modern, accessible, high-performance websites and applications.' },
+        { name: 'format-detection', content: 'telephone=no' },
+        { name: 'theme-color', content: '#6366f1' },
         { property: 'og:type', content: 'website' },
+        { property: 'og:title', content: 'Hamza | Web Developer & Designer' },
+        { property: 'og:description', content: 'Professional web developer specializing in modern, accessible, high-performance websites and applications.' },
+        { property: 'og:image', content: '/social-preview.jpg' },
         { property: 'og:url', content: 'https://hamza.dev' },
-        { property: 'og:image', content: 'https://hamza.dev/images/social-banner.jpg' },
-        { name: 'twitter:card', content: 'summary_large_image' }
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:title', content: 'Hamza | Web Developer & Designer' },
+        { name: 'twitter:description', content: 'Professional web developer specializing in modern, accessible, high-performance websites and applications.' },
+        { name: 'twitter:image', content: '/social-preview.jpg' }
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'canonical', href: 'https://hamza.dev' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap' }
@@ -127,9 +154,58 @@ export default defineNuxtConfig({
   // Runtime config
   runtimeConfig: {
     public: {
-      baseURL: '/HamzaAatar/', // Updated to include repository name
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL,
+      baseURL: process.env.NUXT_PUBLIC_BASE_URL,
+      siteName: process.env.NUXT_PUBLIC_SITE_NAME,
+      siteDescription: process.env.NUXT_PUBLIC_SITE_DESCRIPTION,
+      language: process.env.NUXT_PUBLIC_SITE_LANGUAGE,
+      // Social media
+      twitter: process.env.NUXT_PUBLIC_TWITTER_HANDLE,
+      github: process.env.NUXT_PUBLIC_GITHUB_HANDLE,
+      linkedin: process.env.NUXT_PUBLIC_LINKEDIN_HANDLE,
+      // Contact info
+      contactEmail: process.env.NUXT_PUBLIC_CONTACT_EMAIL,
+      contactPhone: process.env.NUXT_PUBLIC_CONTACT_PHONE,
+      contactLocation: process.env.NUXT_PUBLIC_CONTACT_LOCATION,
     }
   },
 
-  compatibilityDate: '2025-03-21'
+  // Sitemap Configuration simplified to avoid type errors
+  sitemap: {},
+
+  // Image optimization
+  image: {
+    format: ['webp', 'avif', 'jpg', 'png'],
+    quality: 80,
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+    }
+  },
+
+  postcss: {
+    plugins: {
+      'postcss-preset-env': {
+        features: {
+          'is-pseudo-class': false
+        }
+      },
+      'cssnano': { preset: 'default' }
+    }
+  },
+
+  compatibilityDate: '2025-03-21',
+
+  // Configure Site
+  site: {
+    url: process.env.NUXT_PUBLIC_SITE_URL,
+  },
+
+  robots: {
+    robotsTxt: false
+  }
 })

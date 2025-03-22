@@ -1,1 +1,6 @@
+# Allow all web crawlers
+User-agent: *
+Allow: /
 
+# Sitemap location
+Sitemap: ${process.env.NUXT_PUBLIC_SITE_URL}/sitemap.xml

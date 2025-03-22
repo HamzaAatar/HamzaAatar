@@ -119,7 +119,7 @@
               </p>
               
               <div class="flex flex-wrap gap-2 mb-6">
-                <span v-for="tech in project.technologies" :key="tech" class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm rounded-full">
+                <span v-for="tech in project.technologies" :key="tech" class="px-3 py-1 bg-primary-100 dark:bg-primary-700 text-gray-700 dark:text-gray-800 text-sm rounded-full">
                   {{ tech }}
                 </span>
               </div>

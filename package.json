@@ -7,7 +7,11 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview --debug",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "build:optimized": "NODE_ENV=production NITRO_PRESET=github_pages nuxt build",
+    "generate:optimized": "NODE_ENV=production NITRO_PRESET=github_pages nuxt generate",
+    "analyze": "nuxt build --analyze",
+    "lint:a11y": "axe-core --exit"
   },
   "dependencies": {
     "@nuxt/content": "^3.4.0",
@@ -18,6 +22,8 @@
     "@nuxt/test-utils": "^3.17.2",
     "@nuxtjs/color-mode": "^3.5.2",
     "@nuxtjs/mdc": "^0.16.1",
+    "@nuxtjs/seo": "^3.0.1",
+    "@nuxtjs/sitemap": "^7.2.9",
     "@nuxtjs/tailwindcss": "^6.13.2",
     "eslint": "^9.22.0",
     "nuxt": "^3.16.1",
@@ -31,9 +37,13 @@
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
+    "@axe-core/cli": "^4.8.5",
     "@tailwindcss/typography": "^0.5.16",
     "autoprefixer": "^10.4.21",
+    "cssnano": "^6.0.1",
     "postcss": "^8.5.3",
-    "tailwindcss": "^3.3.5"
+    "postcss-preset-env": "^9.3.0",
+    "tailwindcss": "^3.3.5",
+    "terser": "^5.29.1"
   }
 }
