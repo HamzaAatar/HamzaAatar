@@ -26,7 +26,7 @@ jobs:
       # Build the site
       - name: Build site
         run: |
-          NUXT_APP_BASE_URL=/HamzaWebsite \
+          NUXT_APP_BASE_URL=/HamzaWebsite/ \
           npx nuxt build --preset github_pages
       
       # Upload artifact
