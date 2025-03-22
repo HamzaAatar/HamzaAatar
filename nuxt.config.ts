@@ -41,16 +41,22 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'github_pages',
     prerender: {
-      failOnError: false
+      failOnError: false,
+      crawlLinks: true,
+      routes: [
+        '/',
+        '/blog',
+        '/portfolio',
+        '/contact'
+      ]
     }
   },
 
   // App Config
   app: {
-    // baseURL needs to match GitHub repository name if not using a custom domain
-    // Will be automatically set by the github_pages preset
-    // Leave empty for custom domains (just set environment variable in GitHub Actions)
-    baseURL: '/HamzaWebsite',
+    // This is crucial for GitHub Pages
+    baseURL: '/HamzaWebsite', // Keep it simple for now
+    buildAssetsDir: '/_nuxt/', // Don't use underscore to avoid GitHub Pages 404 handling
     head: {
       title: "Hamza's Website - Automation & Web Scraping Expert",
       meta: [
@@ -77,7 +83,7 @@ export default defineNuxtConfig({
   // Runtime config
   runtimeConfig: {
     public: {
-      // Public runtime config here
+      baseURL: '/HamzaWebsite',
     }
   },
 

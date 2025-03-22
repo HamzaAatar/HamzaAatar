@@ -14,13 +14,27 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
-      # Pick your own package manager and build script
-      - run: npm install
-      - run: NITRO_PRESET=github_pages NUXT_PUBLIC_SITE_URL=/HamzaWebsite npx nuxt build --prerender
+      
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+      
+      # Generate a 404.html file for GitHub Pages SPA routing
+      - name: Create 404 page
+        run: mkdir -p .output/public && echo '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=/HamzaWebsite/"></head></html>' > .output/public/404.html
+      
+      # Build the site
+      - name: Build site
+        run: |
+          NUXT_APP_BASE_URL=/HamzaWebsite \
+          npx nuxt build --preset github_pages
+      
+      # Upload artifact
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./.output/public
+  
   # Deployment job
   deploy:
     # Add a dependency to the build job
