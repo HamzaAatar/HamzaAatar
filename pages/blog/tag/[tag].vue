@@ -30,9 +30,6 @@
           <div v-if="!filteredPosts || filteredPosts.length === 0" class="bg-white dark:bg-gray-900 rounded-xl shadow-md p-8 text-center max-w-3xl mx-auto">
             <h2 class="text-2xl font-bold mb-4">No Posts Available</h2>
             <p class="text-gray-600 dark:text-gray-400 mb-6">There are no posts with this tag yet.</p>
-            <NuxtLink to="/blog" class="inline-block px-5 py-3 bg-primary-600 text-white rounded-lg font-medium hover:bg-primary-700 transition">
-              Return to Blog
-            </NuxtLink>
           </div>
           
           <!-- Post Grid -->

@@ -13,7 +13,9 @@
             <!-- Navigation -->
             <nav class="hidden md:flex items-center space-x-6">
               <NuxtLink to="/" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Home</NuxtLink>
+              <NuxtLink to="/services" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Services</NuxtLink>
               <NuxtLink to="/portfolio" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Portfolio</NuxtLink>
+              <NuxtLink to="/testimonials" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Testimonials</NuxtLink>
               <NuxtLink to="/blog" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Blog</NuxtLink>
               <NuxtLink to="/contact" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Contact</NuxtLink>
             </nav>
@@ -72,7 +74,9 @@
         <div v-if="isMobileMenuOpen" class="md:hidden mt-4 pb-4 animate-fade-in">
           <nav class="flex flex-col space-y-4">
             <NuxtLink @click="isMobileMenuOpen = false" to="/" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Home</NuxtLink>
+            <NuxtLink @click="isMobileMenuOpen = false" to="/services" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Services</NuxtLink>
             <NuxtLink @click="isMobileMenuOpen = false" to="/portfolio" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Portfolio</NuxtLink>
+            <NuxtLink @click="isMobileMenuOpen = false" to="/testimonials" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Testimonials</NuxtLink>
             <NuxtLink @click="isMobileMenuOpen = false" to="/blog" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Blog</NuxtLink>
             <NuxtLink @click="isMobileMenuOpen = false" to="/contact" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Contact</NuxtLink>
           </nav>
@@ -123,7 +127,9 @@
             <h3 class="text-gray-900 dark:text-white font-semibold mb-4">Quick Links</h3>
             <ul class="space-y-2">
               <li><NuxtLink to="/" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition">Home</NuxtLink></li>
+              <li><NuxtLink to="/services" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition">Services</NuxtLink></li>
               <li><NuxtLink to="/portfolio" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition">Portfolio</NuxtLink></li>
+              <li><NuxtLink to="/testimonials" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition">Testimonials</NuxtLink></li>
               <li><NuxtLink to="/blog" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition">Blog</NuxtLink></li>
               <li><NuxtLink to="/contact" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition">Contact</NuxtLink></li>
             </ul>
@@ -133,10 +139,10 @@
           <div>
             <h3 class="text-gray-900 dark:text-white font-semibold mb-4">Services</h3>
             <ul class="space-y-2">
-              <li><span class="text-gray-600 dark:text-gray-400">Web Scraping</span></li>
-              <li><span class="text-gray-600 dark:text-gray-400">Custom Automation</span></li>
-              <li><span class="text-gray-600 dark:text-gray-400">Data Processing</span></li>
-              <li><span class="text-gray-600 dark:text-gray-400">Workflow Optimization</span></li>
+              <li><NuxtLink to="/services#web-scraping" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition">Web Scraping</NuxtLink></li>
+              <li><NuxtLink to="/services#custom-automation" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition">Custom Automation</NuxtLink></li>
+              <li><NuxtLink to="/services#data-processing" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition">Data Processing</NuxtLink></li>
+              <li><NuxtLink to="/services#workflow-optimization" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition">Workflow Optimization</NuxtLink></li>
             </ul>
           </div>
           

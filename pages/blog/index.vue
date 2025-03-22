@@ -226,7 +226,6 @@ definePageMeta({
 const { data: posts } = await useAsyncData('blog-posts', () => {
   return queryContent('/blog')
     .sort({ date: -1 })
-    .where({ _partial: false, _draft: false })
     .find()
 })
 
@@ -239,7 +238,7 @@ if (posts.value) {
 } else {
   console.log('No posts found or posts.value is null/undefined')
   console.log('Trying to query content directory structure')
-  const { data: structure } = await useAsyncData('content-structure', () => queryContent().where({ _partial: false }).only(['_path']).find())
+  const { data: structure } = await useAsyncData('content-structure', () => queryContent().only(['_path']).find())
   console.log('Content structure:', structure.value)
 }
 

@@ -37,20 +37,24 @@ export default defineNuxtConfig({
     '/blog/**': { swr: 3600 }
   },
 
-  // // GitHub Pages deployment settings
-  // nitro: {
-  //   preset: 'github_pages',
-  //   prerender: {
-  //     failOnError: false,
-  //     crawlLinks: true,
-  //     routes: [
-  //       '/',
-  //       '/blog',
-  //       '/portfolio',
-  //       '/contact'
-  //     ]
-  //   }
-  // },
+  // GitHub Pages deployment settings
+  nitro: {
+    preset: 'github_pages',
+    prerender: {
+      failOnError: false,
+      crawlLinks: true,
+      routes: [
+        '/',
+        '/services',
+        '/portfolio',
+        '/testimonials',
+        '/blog',
+        '/blog/getting-started-with-web-scraping',
+        '/blog/automating-workflows-with-n8n',
+        '/contact'
+      ]
+    }
+  },
 
   // App Config
   app: {
