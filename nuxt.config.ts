@@ -21,7 +21,57 @@ export default defineNuxtConfig({
   ],
 
   // Content module configuration (minimal to avoid TypeScript errors)
-  content: {},
+  content: {
+    build: {
+      markdown: {
+        toc: {
+          depth: 3, // include h3 headings
+        },
+        // Object syntax can be used to override default options
+        remarkPlugins: {
+          // Override remark-emoji options
+          'remark-emoji': {
+            options: {
+              emoticon: true
+            }
+          },
+          // Disable remark-gfm
+          'remark-gfm': false,
+          // Add remark-oembed
+          'remark-oembed': {
+            // Options
+          }
+        },
+        rehypePlugins: {
+          'rehype-figure': {
+
+          }
+        },
+        highlight: {
+          // Theme used in all color schemes.
+          theme: {
+            // Default theme (same as single string)
+            default: 'github-light',
+            // Theme used if `html.dark`
+            dark: 'github-dark',
+            // Theme used if `html.sepia`
+            sepia: 'monokai'
+          },
+          langs: [
+            'bash',
+            'python',
+            'javascript',
+            'typescript',
+            'css',
+            'html',
+            'json',
+            'markdown',
+            'sql'
+          ]
+        }
+      }
+    }
+  },
 
   // Color mode configuration
   colorMode: {
