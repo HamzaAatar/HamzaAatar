@@ -1,8 +1,7 @@
 <template>
   <div>
-    <SeoHead />
     <NuxtLayout>
-      <NuxtLoadingIndicator />
+        <NuxtLoadingIndicator />
       <NuxtPage />
     </NuxtLayout>
   </div>
