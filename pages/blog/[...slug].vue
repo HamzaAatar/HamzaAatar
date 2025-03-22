@@ -170,18 +170,27 @@ const { slug } = route.params
 
 // Fetch the post data
 const { data: post } = await useAsyncData(`blog-post-${slug.join('-')}`, () =>
-  queryContent('blog')
-    .where({ _path: `/blog/${slug.join('/')}` })
-    .findOne()
+    queryCollection('blog').path(`/blog/${slug}`).first()
 )
 
 // Add debugging
 console.log("Fetching blog post with slug:", slug.join('/'))
 console.log("Post found:", post.value)
+console.log("Full path being queried:", `/blog/${slug.join('/')}`)
 
-// If post not found, redirect to 404
+// If post not found, try a direct approach
 if (!post.value) {
-  throw createError({ statusCode: 404, message: 'Post not found' })
+  console.log("Post not found with path query, trying direct query")
+  const { data: directPost } = await useAsyncData(`direct-blog-post-${slug.join('-')}`, () =>
+    queryContent(`/blog/${slug.join('/')}`).findOne()
+  )
+  console.log("Direct query result:", directPost.value)
+  
+  if (directPost.value) {
+    post.value = directPost.value
+  } else {
+    throw createError({ statusCode: 404, message: 'Post not found' })
+  }
 }
 
 // Page URL for sharing

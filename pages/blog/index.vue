@@ -30,7 +30,7 @@
             <!-- Main Content -->
             <div class="md:col-span-8">
               <!-- No Posts Message -->
-              <div v-if="!posts?.value || posts.value.length === 0" class="bg-white dark:bg-gray-900 rounded-xl shadow-md p-8 text-center">
+              <div v-if="!posts || posts.length === 0" class="bg-white dark:bg-gray-900 rounded-xl shadow-md p-8 text-center">
                 <h2 class="text-2xl font-bold mb-4">No Posts Available</h2>
                 <p class="text-gray-600 dark:text-gray-400">Check back soon for new content!</p>
               </div>
@@ -39,7 +39,7 @@
               <div v-else-if="featuredPost" class="mb-16 reveal">
                 <h2 class="text-2xl font-bold mb-6 border-l-4 border-primary-500 pl-4">Featured Post</h2>
                 <div class="bg-white dark:bg-gray-900 rounded-xl shadow-md overflow-hidden hover-lift transition group">
-                  <NuxtLink :to="`/blog/${featuredPost._path.split('/').pop()}`" class="block">
+                  <NuxtLink :to="`/blog/${featuredPost.path.split('/').pop()}`" class="block">
                     <div class="relative h-64 md:h-80 overflow-hidden">
                       <img 
                         :src="featuredPost.image || '/images/blog/default.jpg'" 
@@ -69,11 +69,11 @@
               </div>
               
               <!-- Post Grid -->
-              <div v-if="posts?.value && posts.value.length > 0">
+              <div v-if="posts && posts.length > 0">
                 <h2 class="text-2xl font-bold mb-6 border-l-4 border-primary-500 pl-4">Latest Articles</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div v-for="post in regularPosts" :key="post._path" class="bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 overflow-hidden hover-lift transition group reveal">
-                    <NuxtLink :to="`/blog/${post._path.split('/').pop()}`" class="block">
+                  <div v-for="post in regularPosts" :key="post.path" class="bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 overflow-hidden hover-lift transition group reveal">
+                    <NuxtLink :to="`/blog/${post.path.split('/').pop()}`" class="block">
                       <div class="relative h-48 overflow-hidden">
                         <img 
                           :src="post.image || '/images/blog/default.jpg'" 
@@ -104,7 +104,7 @@
               </div>
               
               <!-- Pagination (if needed) -->
-              <div v-if="posts?.value && posts.value.length > postsPerPage" class="mt-12 flex justify-center">
+              <div v-if="posts && posts.length > postsPerPage" class="mt-12 flex justify-center">
                 <ul class="flex items-center space-x-2">
                   <li>
                     <button 
@@ -222,38 +222,29 @@ definePageMeta({
   layout: 'default'
 })
 
-// Fetch blog posts
+// Fetch blog posts - using correct v3 syntax with queryCollection
 const { data: posts } = await useAsyncData('blog-posts', () => {
-  return queryContent('blog')
-    .sort({ date: -1 })
-    .find()
+  return queryCollection('blog').order('date', 'DESC').all()
 })
-
-// Add more detailed console logs for debugging
-console.log('Blog posts found:', posts.value)
-if (posts.value) {
-  console.log('Number of posts:', posts.value.length)
-  posts.value.forEach(post => {
-    console.log('Post path:', post._path)
-    console.log('Post title:', post.title)
-    console.log('Post date:', post.date)
-  })
-}
 
 // Pagination
 const postsPerPage = 6
 const currentPage = ref(1)
-const totalPages = computed(() => regularPosts.value ? Math.ceil(regularPosts.value.length / postsPerPage) : 0)
+const totalPages = computed(() => {
+  return posts.value && posts.value.length > 0 
+    ? Math.ceil(posts.value.length / postsPerPage) 
+    : 0
+})
 
 // Featured post
 const featuredPost = computed(() => {
-  if (!posts.value) return null
+  if (!posts.value || posts.value.length === 0) return null
   return posts.value.find(post => post.featured === true)
 })
 
 // Regular posts (excluding featured)
 const regularPosts = computed(() => {
-  if (!posts.value) return []
+  if (!posts.value || posts.value.length === 0) return []
   return posts.value
     .filter(post => post !== featuredPost.value)
     .slice((currentPage.value - 1) * postsPerPage, currentPage.value * postsPerPage)
@@ -261,7 +252,7 @@ const regularPosts = computed(() => {
 
 // Calculate categories
 const categories = computed(() => {
-  if (!posts.value) return []
+  if (!posts.value || posts.value.length === 0) return []
   const categoryMap = {}
   
   posts.value.forEach(post => {
@@ -301,7 +292,6 @@ function formatDate(dateString) {
 const newsletterEmail = ref('')
 
 function subscribeToNewsletter() {
-  // In a real app, you would call an API to handle the subscription
   alert(`Thanks for subscribing with ${newsletterEmail.value}! (This is a demo, no email is actually sent)`)
   newsletterEmail.value = ''
 }

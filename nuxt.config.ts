@@ -20,10 +20,8 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode'
   ],
 
-  // Content module configuration
-  content: {
-    // Using a simplified configuration to avoid TypeScript errors
-  },
+  // Content module configuration (minimal to avoid TypeScript errors)
+  content: {},
 
   // Color mode configuration
   colorMode: {
