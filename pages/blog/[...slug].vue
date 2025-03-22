@@ -61,7 +61,7 @@
           </div>
           
           <!-- Content -->
-          <div class="prose prose-lg dark:prose-invert mb-16 reveal">
+          <div class="prose prose-lg dark:prose-invert mb-16">
             <ContentRenderer :value="post" :prose="true" />
           </div>
           
