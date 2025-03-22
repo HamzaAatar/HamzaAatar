@@ -37,8 +37,17 @@ export default defineNuxtConfig({
     '/blog/**': { swr: 3600 }
   },
 
+  // GitHub Pages deployment settings
+  nitro: {
+    preset: 'github_pages',
+  },
+
   // App Config
   app: {
+    // baseURL needs to match GitHub repository name if not using a custom domain
+    // Will be automatically set by the github_pages preset
+    // Leave empty for custom domains (just set environment variable in GitHub Actions)
+    baseURL: '/HamzaWebsite',
     head: {
       title: "Hamza's Website - Automation & Web Scraping Expert",
       meta: [
