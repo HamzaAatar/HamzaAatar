@@ -35,7 +35,7 @@
           <!-- Post Grid -->
           <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div v-for="post in filteredPosts" :key="post._path" class="bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 overflow-hidden hover-lift transition group reveal">
-              <NuxtLink :to="`/blog/${post._path.split('/').pop()}`" class="block">
+              <NuxtLink :to="`/blog/${post.path.split('/').pop()}`" class="block">
                 <div class="relative h-48 overflow-hidden">
                   <img 
                     :src="post.image || '/images/blog/default.jpg'" 
@@ -85,11 +85,11 @@ definePageMeta({
 
 // Get current route
 const route = useRoute()
-const category = computed(() => route.params.category)
+const { category } = route.params
 
 // Format category name (replace hyphens with spaces and capitalize)
 const categoryName = computed(() => {
-  return category.value
+  return category
     .split('-')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ')
@@ -97,7 +97,7 @@ const categoryName = computed(() => {
 
 // Fetch all blog posts
 const { data: posts } = await useAsyncData('all-blog-posts-category', () => 
-  queryContent('/blog').sort({ date: -1 }).find()
+  queryCollection('blog').order('date', 'DESC').all()
 )
 
 // Filter posts by category
@@ -110,7 +110,7 @@ const filteredPosts = computed(() => {
     
     // Compare formatted category slugs
     const postCategorySlug = post.category.toLowerCase().replace(/ /g, '-')
-    return postCategorySlug === category.value.toLowerCase()
+    return postCategorySlug === category.toLowerCase()
   })
 })
 

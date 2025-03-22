@@ -363,11 +363,11 @@ useSeoMeta({
 }
 
 /* Reveal animation */
-.reveal {
+/* .reveal {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
-}
+} */
 
 .reveal.active {
   opacity: 1;

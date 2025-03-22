@@ -35,7 +35,7 @@
           <!-- Post Grid -->
           <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div v-for="post in filteredPosts" :key="post._path" class="bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 overflow-hidden hover-lift transition group reveal">
-              <NuxtLink :to="`/blog/${post._path.split('/').pop()}`" class="block">
+              <NuxtLink :to="`/blog/${post.path.split('/').pop()}`" class="block">
                 <div class="relative h-48 overflow-hidden">
                   <img 
                     :src="post.image || '/images/blog/default.jpg'" 
@@ -89,7 +89,7 @@ const tag = computed(() => route.params.tag)
 
 // Fetch all blog posts
 const { data: posts } = await useAsyncData('all-blog-posts', () => 
-  queryContent('/blog').sort({ date: -1 }).find()
+    queryCollection('blog').order('date', 'DESC').all()
 )
 
 // Filter posts by tag
