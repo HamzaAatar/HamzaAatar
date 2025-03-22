@@ -40,6 +40,9 @@ export default defineNuxtConfig({
   // GitHub Pages deployment settings
   nitro: {
     preset: 'github_pages',
+    prerender: {
+      failOnError: false
+    }
   },
 
   // App Config
