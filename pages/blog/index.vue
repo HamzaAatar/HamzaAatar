@@ -224,7 +224,7 @@ definePageMeta({
 
 // Fetch blog posts
 const { data: posts } = await useAsyncData('blog-posts', () => {
-  return queryContent('/blog')
+  return queryContent('blog')
     .sort({ date: -1 })
     .find()
 })
@@ -233,13 +233,11 @@ const { data: posts } = await useAsyncData('blog-posts', () => {
 console.log('Blog posts found:', posts.value)
 if (posts.value) {
   console.log('Number of posts:', posts.value.length)
-  console.log('Post paths:', posts.value.map(p => p._path))
-  console.log('First post details:', posts.value[0])
-} else {
-  console.log('No posts found or posts.value is null/undefined')
-  console.log('Trying to query content directory structure')
-  const { data: structure } = await useAsyncData('content-structure', () => queryContent().only(['_path']).find())
-  console.log('Content structure:', structure.value)
+  posts.value.forEach(post => {
+    console.log('Post path:', post._path)
+    console.log('Post title:', post.title)
+    console.log('Post date:', post.date)
+  })
 }
 
 // Pagination

@@ -170,10 +170,14 @@ const { slug } = route.params
 
 // Fetch the post data
 const { data: post } = await useAsyncData(`blog-post-${slug.join('-')}`, () =>
-  queryContent('/blog')
+  queryContent('blog')
     .where({ _path: `/blog/${slug.join('/')}` })
     .findOne()
 )
+
+// Add debugging
+console.log("Fetching blog post with slug:", slug.join('/'))
+console.log("Post found:", post.value)
 
 // If post not found, redirect to 404
 if (!post.value) {
@@ -190,7 +194,7 @@ const pageUrl = computed(() => {
 
 // Get related posts (same category)
 const { data: allPosts } = await useAsyncData('all-blog-posts', () => 
-  queryContent('/blog').find()
+  queryContent('blog').find()
 )
 
 const relatedPosts = computed(() => {

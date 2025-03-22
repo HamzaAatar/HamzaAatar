@@ -20,7 +20,18 @@
           <div class="grid md:grid-cols-5 gap-12 items-center">
             <div class="md:col-span-2">
               <div class="bg-gray-100 dark:bg-gray-800 p-8 rounded-xl flex items-center justify-center aspect-square">
-                <UIcon name="i-heroicons-cpu-chip" class="w-32 h-32 text-primary-500" />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-32 h-32 text-primary-500">
+                  <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                  <rect x="9" y="9" width="6" height="6"></rect>
+                  <line x1="9" y1="1" x2="9" y2="4"></line>
+                  <line x1="15" y1="1" x2="15" y2="4"></line>
+                  <line x1="9" y1="20" x2="9" y2="23"></line>
+                  <line x1="15" y1="20" x2="15" y2="23"></line>
+                  <line x1="20" y1="9" x2="23" y2="9"></line>
+                  <line x1="20" y1="14" x2="23" y2="14"></line>
+                  <line x1="1" y1="9" x2="4" y2="9"></line>
+                  <line x1="1" y1="14" x2="4" y2="14"></line>
+                </svg>
               </div>
             </div>
             
@@ -39,7 +50,9 @@
               
               <div class="space-y-4">
                 <div class="flex items-start gap-3">
-                  <UIcon name="i-heroicons-check-circle" class="w-6 h-6 text-primary-500 flex-shrink-0" />
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
                   <div>
                     <h3 class="font-bold">Task Automation</h3>
                     <p class="text-gray-600 dark:text-gray-400">Automate repetitive tasks to save time and reduce human error</p>
@@ -47,7 +60,9 @@
                 </div>
                 
                 <div class="flex items-start gap-3">
-                  <UIcon name="i-heroicons-check-circle" class="w-6 h-6 text-primary-500 flex-shrink-0" />
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
                   <div>
                     <h3 class="font-bold">Process Optimization</h3>
                     <p class="text-gray-600 dark:text-gray-400">Streamline and optimize your existing business processes</p>
@@ -55,7 +70,9 @@
                 </div>
                 
                 <div class="flex items-start gap-3">
-                  <UIcon name="i-heroicons-check-circle" class="w-6 h-6 text-primary-500 flex-shrink-0" />
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
                   <div>
                     <h3 class="font-bold">Custom Scripts</h3>
                     <p class="text-gray-600 dark:text-gray-400">Python scripts developed specifically for your business needs</p>
@@ -84,7 +101,9 @@
               
               <div class="space-y-4">
                 <div class="flex items-start gap-3">
-                  <UIcon name="i-heroicons-check-circle" class="w-6 h-6 text-primary-500 flex-shrink-0" />
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
                   <div>
                     <h3 class="font-bold">Price Monitoring</h3>
                     <p class="text-gray-600 dark:text-gray-400">Track competitor pricing to keep your offerings competitive</p>
@@ -92,7 +111,9 @@
                 </div>
                 
                 <div class="flex items-start gap-3">
-                  <UIcon name="i-heroicons-check-circle" class="w-6 h-6 text-primary-500 flex-shrink-0" />
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
                   <div>
                     <h3 class="font-bold">Content Aggregation</h3>
                     <p class="text-gray-600 dark:text-gray-400">Collect and organize content from multiple sources</p>
@@ -100,7 +121,9 @@
                 </div>
                 
                 <div class="flex items-start gap-3">
-                  <UIcon name="i-heroicons-check-circle" class="w-6 h-6 text-primary-500 flex-shrink-0" />
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
                   <div>
                     <h3 class="font-bold">Data Analysis</h3>
                     <p class="text-gray-600 dark:text-gray-400">Transform raw data into meaningful insights</p>
@@ -111,7 +134,10 @@
             
             <div class="md:col-span-2 md:order-2 order-1">
               <div class="bg-gray-100 dark:bg-gray-800 p-8 rounded-xl flex items-center justify-center aspect-square">
-                <UIcon name="i-heroicons-globe-alt" class="w-32 h-32 text-primary-500" />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-32 h-32 text-primary-500">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path>
+                  <path d="M12 3a15.3 15.3 0 0110.5 22.3c-1.8-5.3-7.8-9.3-14.1-10.2z"></path>
+                </svg>
               </div>
             </div>
           </div>
@@ -122,7 +148,10 @@
           <div class="grid md:grid-cols-5 gap-12 items-center">
             <div class="md:col-span-2">
               <div class="bg-gray-100 dark:bg-gray-800 p-8 rounded-xl flex items-center justify-center aspect-square">
-                <UIcon name="i-heroicons-puzzle-piece" class="w-32 h-32 text-primary-500" />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-32 h-32 text-primary-500">
+                  <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8-8zm2-11a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  <path d="M12 16a4 4 0 100-8 4 4 0 000 8z"></path>
+                </svg>
               </div>
             </div>
             
@@ -141,7 +170,9 @@
               
               <div class="space-y-4">
                 <div class="flex items-start gap-3">
-                  <UIcon name="i-heroicons-check-circle" class="w-6 h-6 text-primary-500 flex-shrink-0" />
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
                   <div>
                     <h3 class="font-bold">App Integration</h3>
                     <p class="text-gray-600 dark:text-gray-400">Connect your favorite apps and services seamlessly</p>
@@ -149,7 +180,9 @@
                 </div>
                 
                 <div class="flex items-start gap-3">
-                  <UIcon name="i-heroicons-check-circle" class="w-6 h-6 text-primary-500 flex-shrink-0" />
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
                   <div>
                     <h3 class="font-bold">Visual Workflows</h3>
                     <p class="text-gray-600 dark:text-gray-400">Easy-to-understand visual representation of your automated processes</p>
@@ -157,7 +190,9 @@
                 </div>
                 
                 <div class="flex items-start gap-3">
-                  <UIcon name="i-heroicons-check-circle" class="w-6 h-6 text-primary-500 flex-shrink-0" />
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
                   <div>
                     <h3 class="font-bold">Rapid Implementation</h3>
                     <p class="text-gray-600 dark:text-gray-400">Quick setup and deployment of automation solutions</p>
@@ -186,7 +221,9 @@
               
               <div class="space-y-4">
                 <div class="flex items-start gap-3">
-                  <UIcon name="i-heroicons-check-circle" class="w-6 h-6 text-primary-500 flex-shrink-0" />
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
                   <div>
                     <h3 class="font-bold">Browser Automation</h3>
                     <p class="text-gray-600 dark:text-gray-400">Automate tasks in web browsers using Selenium and similar tools</p>
@@ -194,7 +231,9 @@
                 </div>
                 
                 <div class="flex items-start gap-3">
-                  <UIcon name="i-heroicons-check-circle" class="w-6 h-6 text-primary-500 flex-shrink-0" />
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
                   <div>
                     <h3 class="font-bold">Chat Bots</h3>
                     <p class="text-gray-600 dark:text-gray-400">Automate customer interactions and support functions</p>
@@ -202,7 +241,9 @@
                 </div>
                 
                 <div class="flex items-start gap-3">
-                  <UIcon name="i-heroicons-check-circle" class="w-6 h-6 text-primary-500 flex-shrink-0" />
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
                   <div>
                     <h3 class="font-bold">Task Bots</h3>
                     <p class="text-gray-600 dark:text-gray-400">Create bots that perform specific tasks automatically</p>
@@ -213,7 +254,10 @@
             
             <div class="md:col-span-2 md:order-2 order-1">
               <div class="bg-gray-100 dark:bg-gray-800 p-8 rounded-xl flex items-center justify-center aspect-square">
-                <UIcon name="i-heroicons-command-line" class="w-32 h-32 text-primary-500" />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-32 h-32 text-primary-500">
+                  <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8-8zm2-11a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  <path d="M12 16a4 4 0 100-8 4 4 0 000 8z"></path>
+                </svg>
               </div>
             </div>
           </div>
@@ -234,7 +278,9 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div class="bg-white dark:bg-gray-800 p-8 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm">
             <div class="bg-primary-100 dark:bg-primary-900/30 p-3 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
-              <UIcon name="i-heroicons-envelope" class="text-primary-500 w-6 h-6" />
+              <svg xmlns="http://www.w3.org/2000/svg" class="text-primary-500 w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
             </div>
             <h3 class="text-xl font-bold mb-3">Email Automation</h3>
             <p class="text-gray-600 dark:text-gray-400">
@@ -244,7 +290,9 @@
           
           <div class="bg-white dark:bg-gray-800 p-8 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm">
             <div class="bg-primary-100 dark:bg-primary-900/30 p-3 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
-              <UIcon name="i-heroicons-document-text" class="text-primary-500 w-6 h-6" />
+              <svg xmlns="http://www.w3.org/2000/svg" class="text-primary-500 w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
             </div>
             <h3 class="text-xl font-bold mb-3">Data Processing</h3>
             <p class="text-gray-600 dark:text-gray-400">
@@ -254,7 +302,9 @@
           
           <div class="bg-white dark:bg-gray-800 p-8 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm">
             <div class="bg-primary-100 dark:bg-primary-900/30 p-3 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
-              <UIcon name="i-heroicons-wrench-screwdriver" class="text-primary-500 w-6 h-6" />
+              <svg xmlns="http://www.w3.org/2000/svg" class="text-primary-500 w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 01-9 5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+              </svg>
             </div>
             <h3 class="text-xl font-bold mb-3">API Integration</h3>
             <p class="text-gray-600 dark:text-gray-400">

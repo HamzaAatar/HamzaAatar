@@ -13,6 +13,7 @@
             <!-- Navigation -->
             <nav class="hidden md:flex items-center space-x-6">
               <NuxtLink to="/" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Home</NuxtLink>
+              <NuxtLink to="/about" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">About</NuxtLink>
               <NuxtLink to="/services" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Services</NuxtLink>
               <NuxtLink to="/portfolio" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Portfolio</NuxtLink>
               <NuxtLink to="/testimonials" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Testimonials</NuxtLink>
@@ -74,6 +75,7 @@
         <div v-if="isMobileMenuOpen" class="md:hidden mt-4 pb-4 animate-fade-in">
           <nav class="flex flex-col space-y-4">
             <NuxtLink @click="isMobileMenuOpen = false" to="/" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Home</NuxtLink>
+            <NuxtLink @click="isMobileMenuOpen = false" to="/about" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">About</NuxtLink>
             <NuxtLink @click="isMobileMenuOpen = false" to="/services" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Services</NuxtLink>
             <NuxtLink @click="isMobileMenuOpen = false" to="/portfolio" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Portfolio</NuxtLink>
             <NuxtLink @click="isMobileMenuOpen = false" to="/testimonials" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Testimonials</NuxtLink>
@@ -127,6 +129,7 @@
             <h3 class="text-gray-900 dark:text-white font-semibold mb-4">Quick Links</h3>
             <ul class="space-y-2">
               <li><NuxtLink to="/" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition">Home</NuxtLink></li>
+              <li><NuxtLink to="/about" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition">About</NuxtLink></li>
               <li><NuxtLink to="/services" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition">Services</NuxtLink></li>
               <li><NuxtLink to="/portfolio" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition">Portfolio</NuxtLink></li>
               <li><NuxtLink to="/testimonials" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition">Testimonials</NuxtLink></li>

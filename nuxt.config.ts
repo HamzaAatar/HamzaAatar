@@ -22,7 +22,7 @@ export default defineNuxtConfig({
 
   // Content module configuration
   content: {
-    // Default content configuration
+    // Using a simplified configuration to avoid TypeScript errors
   },
 
   // Color mode configuration
@@ -45,6 +45,7 @@ export default defineNuxtConfig({
       crawlLinks: true,
       routes: [
         '/',
+        '/about',
         '/services',
         '/portfolio',
         '/testimonials',
