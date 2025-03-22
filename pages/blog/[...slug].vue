@@ -61,8 +61,8 @@
           </div>
           
           <!-- Content -->
-          <div class="prose prose-lg dark:prose-invert max-w-none mb-16 reveal">
-            <ContentRenderer :value="post" />
+          <div class="prose prose-lg dark:prose-invert mb-16 reveal">
+            <ContentRenderer :value="post" :prose="true" />
           </div>
           
           <!-- Share Section -->
