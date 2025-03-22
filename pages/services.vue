@@ -377,9 +377,12 @@
           <p class="text-xl text-gray-600 dark:text-gray-400 mb-8">
             Let's discuss your project and find the right solution for your business
           </p>
-          <UButton to="/contact" color="primary" size="lg">
+          <a 
+            href="/contact" 
+            class="inline-block px-6 py-3 bg-primary-600 dark:bg-primary-400 text-white rounded-lg font-medium hover:bg-primary-700 transition"
+          >
             Get in Touch
-          </UButton>
+          </a>
         </div>
       </div>
     </section>
