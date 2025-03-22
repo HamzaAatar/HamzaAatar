@@ -60,12 +60,12 @@
                 View Upwork Profile
               </a>
               
-              <a
-                href="/contact"
+              <NuxtLink
+                to="/contact"
                 class="w-full inline-block text-center px-4 py-2 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 bg-white dark:bg-transparent rounded-lg font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition"
               >
                 Contact Me
-              </a>
+              </NuxtLink>
             </div>
           </div>
           
@@ -298,12 +298,12 @@
             Let's discuss how I can help automate your business processes
           </p>
           <div class="flex flex-wrap justify-center gap-4">
-            <a href="/contact" class="inline-block px-6 py-3 bg-primary-600 dark:bg-primary-400 text-white rounded-lg font-medium hover:bg-primary-700 transition">
+            <NuxtLink to="/contact" class="inline-block px-6 py-3 bg-primary-600 dark:bg-primary-400 text-white rounded-lg font-medium hover:bg-primary-700 transition">
               Contact Me
-            </a>
-            <a href="/portfolio" class="inline-block px-6 py-3 bg-transparent border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 rounded-lg font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition">
+            </NuxtLink>
+            <NuxtLink to="/portfolio" class="inline-block px-6 py-3 bg-transparent border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 rounded-lg font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition">
               View My Work
-            </a>
+            </NuxtLink>
           </div>
         </div>
       </div>

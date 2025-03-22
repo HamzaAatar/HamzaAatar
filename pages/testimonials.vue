@@ -269,12 +269,12 @@
           <p class="text-xl text-gray-600 dark:text-gray-400 mb-8">
             Let's discuss how automation can transform your business
           </p>
-          <a 
-            href="/contact"
+          <NuxtLink 
+            to="/contact"
             class="inline-block px-6 py-3 bg-primary-600 dark:bg-primary-400 text-white rounded-lg font-medium hover:bg-primary-700 transition"
           >
             Get in Touch
-          </a>
+          </NuxtLink>
         </div>
       </div>
     </section>

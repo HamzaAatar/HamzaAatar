@@ -126,6 +126,11 @@
           
           <!-- Column 2: Quick Links -->
           <div>
+            
+          </div>
+          
+          <!-- Column 3: Services -->
+          <div>
             <h3 class="text-gray-900 dark:text-white font-semibold mb-4">Quick Links</h3>
             <ul class="space-y-2">
               <li><NuxtLink to="/" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition">Home</NuxtLink></li>
@@ -135,17 +140,6 @@
               <li><NuxtLink to="/testimonials" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition">Testimonials</NuxtLink></li>
               <li><NuxtLink to="/blog" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition">Blog</NuxtLink></li>
               <li><NuxtLink to="/contact" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition">Contact</NuxtLink></li>
-            </ul>
-          </div>
-          
-          <!-- Column 3: Services -->
-          <div>
-            <h3 class="text-gray-900 dark:text-white font-semibold mb-4">Services</h3>
-            <ul class="space-y-2">
-              <li><NuxtLink to="/services#web-scraping" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition">Web Scraping</NuxtLink></li>
-              <li><NuxtLink to="/services#custom-automation" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition">Custom Automation</NuxtLink></li>
-              <li><NuxtLink to="/services#data-processing" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition">Data Processing</NuxtLink></li>
-              <li><NuxtLink to="/services#workflow-optimization" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition">Workflow Optimization</NuxtLink></li>
             </ul>
           </div>
           
