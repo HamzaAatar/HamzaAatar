@@ -8,8 +8,6 @@ image: "/images/blog/n8n-automation.jpg"
 featured: false
 ---
 
-# Automating Business Workflows with n8n: The Ultimate Guide
-
 In today's fast-paced business environment, automation is no longer a luxury—it's a necessity. Repetitive tasks drain your team's time and energy, leading to decreased productivity and increased burnout. This is where workflow automation tools like n8n come in, offering a powerful yet accessible way to streamline your operations.
 
 ## What is n8n?
@@ -51,7 +49,7 @@ Let's create a simple workflow that sends a daily summary of your Google Sheets 
 2. Add a "Schedule" trigger node
 3. Configure it to run daily at 9:00 AM
 
-```json
+```json [schedule-trigger.json]
 {
   "name": "Schedule",
   "type": "n8n-nodes-base.schedule",
@@ -73,7 +71,7 @@ Let's create a simple workflow that sends a daily summary of your Google Sheets 
 3. Select your spreadsheet and the specific sheet
 4. Configure it to read all rows
 
-```json
+```json [google-sheets-node.json]{8} highlight=sheet-id
 {
   "name": "Google Sheets",
   "type": "n8n-nodes-base.googleSheets",
@@ -98,7 +96,7 @@ Let's create a simple workflow that sends a daily summary of your Google Sheets 
 1. Add a "Function" node to transform the data
 2. Write a simple script to summarize the data
 
-```json
+```json [function-node.json]
 {
   "name": "Function",
   "type": "n8n-nodes-base.function",
@@ -119,7 +117,7 @@ Let's create a simple workflow that sends a daily summary of your Google Sheets 
 2. Connect your Slack account
 3. Configure it to send a message to a specific channel
 
-```json
+```json [slack-node.json]
 {
   "name": "Slack",
   "type": "n8n-nodes-base.slack",
@@ -159,7 +157,7 @@ n8n provides robust error handling capabilities. You can:
 - Create error workflow branches using the "Error Trigger" node
 - Send notifications when workflows fail
 
-```json
+```json [error-trigger.json]
 {
   "name": "Error Trigger",
   "type": "n8n-nodes-base.errorTrigger",
@@ -180,7 +178,7 @@ Instead of time-based schedules, you can trigger workflows via webhooks:
 2. Configure it to listen for HTTP requests
 3. Use the generated URL to trigger your workflow from external systems
 
-```json
+```json [webhook-trigger.json]{5-6} webhook-config
 {
   "name": "Webhook",
   "type": "n8n-nodes-base.webhook",
@@ -202,7 +200,7 @@ Instead of time-based schedules, you can trigger workflows via webhooks:
 
 For complex data transformations, n8n's Function node allows you to write custom JavaScript:
 
-```javascript
+```javascript [currency-conversion.js]
 // Input: items coming from previous node
 
 // Example: Converting currency values
@@ -275,7 +273,7 @@ Rename your nodes to clearly describe their purpose:
 
 Add sticky notes to group related nodes and explain complex sections:
 
-```json
+```json [sticky-note.json]
 {
   "name": "Note about data processing",
   "type": "n8n-nodes-base.stickyNote",

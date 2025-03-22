@@ -271,10 +271,10 @@ useSeoMeta({
 }
 
 .prose pre {
-  background-color: #f4f4f4;
   border-radius: 6px;
   padding: 1em;
   overflow-x: auto;
+  position: relative;
 }
 
 .dark .prose pre {
@@ -286,6 +286,43 @@ useSeoMeta({
   padding: 0;
   border-radius: 0;
   font-size: 0.9em;
+}
+
+/* Styling for filename in code blocks */
+.prose pre[data-filename]::before {
+  content: attr(data-filename);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5em 1em;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.8em;
+}
+
+.dark .prose pre[data-filename]::before {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.prose pre[data-filename] {
+  padding-top: 3em;
+}
+
+/* Styling for highlighted lines */
+.prose pre .highlight-line {
+  background-color: rgba(25, 125, 255, 0.1);
+  display: block;
+  margin: 0 -1em;
+  padding: 0 1em;
+}
+
+.dark .prose pre .highlight-line {
+  background-color: rgba(25, 125, 255, 0.2);
 }
 
 .prose img {
@@ -306,11 +343,11 @@ useSeoMeta({
 }
 
 /* Reveal animation */
-.reveal {
+/* .reveal {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
-}
+} */
 
 .reveal.active {
   opacity: 1;

@@ -8,7 +8,6 @@ image: "/images/blog/web-scraping-python.jpg"
 featured: true
 ---
 
-## Getting Started with Web Scraping in Python: A Beginner's Guide
 
 Web scraping is the automated extraction of data from websites. It's an invaluable skill that enables you to collect information without the tedious process of manual copying. Whether you're gathering data for market research, lead generation, price monitoring, or content aggregation, Python offers powerful tools to streamline your web scraping projects.
 
@@ -39,7 +38,7 @@ Before starting any web scraping project, it's important to understand the legal
 
 Let's start by installing the necessary libraries:
 
-```bash
+```bash [install-dependencies.sh]{2} meta-info=val
 pip install requests beautifulsoup4 selenium pandas
 ```
 
@@ -52,7 +51,7 @@ pip install requests beautifulsoup4 selenium pandas
 
 Let's start with a simple example: extracting the titles and URLs of posts from the Python subreddit.
 
-```python
+```python [reddit_scraper.py]
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -106,7 +105,7 @@ First, you'll need to install a webdriver. For Chrome, you can download ChromeDr
 
 Here's an example of scraping a JavaScript-heavy website:
 
-```python
+```python [selenium_scraper.py]{15-17} highlight=selenium-options
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
@@ -170,7 +169,7 @@ This script:
 
 1. **Handle Rate Limiting**: Add delays between requests to avoid overwhelming the server.
 
-```python
+```python [rate_limiting.py]
 import random
 import time
 
@@ -180,7 +179,7 @@ time.sleep(random.uniform(1, 3))
 
 2. **Implement Error Handling**: Websites may change their structure or be temporarily unavailable.
 
-```python
+```python [error_handling.py]
 try:
     response = requests.get(url, headers=headers, timeout=10)
     response.raise_for_status()  # Raise an exception for HTTP errors
@@ -191,7 +190,7 @@ except requests.exceptions.RequestException as e:
 
 3. **Save Progress Regularly**: For large scraping tasks, save your progress frequently.
 
-```python
+```python [save_progress.py]
 # After processing each batch of URLs
 df = pd.DataFrame(partial_data)
 df.to_csv(f"data_batch_{batch_number}.csv", index=False)
@@ -199,7 +198,7 @@ df.to_csv(f"data_batch_{batch_number}.csv", index=False)
 
 4. **Use Proxy Rotation**: For large-scale scraping, rotating proxies can help avoid IP bans.
 
-```python
+```python [proxy_rotation.py]
 proxies = [
     {"http": "http://proxy1.example.com:8080", "https": "https://proxy1.example.com:8080"},
     {"http": "http://proxy2.example.com:8080", "https": "https://proxy2.example.com:8080"},
@@ -213,7 +212,7 @@ response = requests.get(url, headers=headers, proxies=proxy)
 
 5. **Implement Caching**: To reduce redundant requests and bandwidth usage.
 
-```python
+```python [caching.py]{1-3} metadata=important
 import hashlib
 import os
 import pickle
@@ -273,7 +272,7 @@ For scraping large amounts of data:
 
 For faster scraping, you can use `aiohttp` to make concurrent requests:
 
-```python
+```python [async_scraper.py]
 import aiohttp
 import asyncio
 from bs4 import BeautifulSoup
@@ -302,7 +301,7 @@ for html in responses:
 
 For large-scale production scraping, consider using Scrapy, a comprehensive web scraping framework:
 
-```python
+```python [scrapy_spider.py]
 # Install Scrapy: pip install scrapy
 
 # Create a new Scrapy project
