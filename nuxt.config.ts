@@ -37,20 +37,20 @@ export default defineNuxtConfig({
     '/blog/**': { swr: 3600 }
   },
 
-  // GitHub Pages deployment settings
-  nitro: {
-    preset: 'github_pages',
-    prerender: {
-      failOnError: false,
-      crawlLinks: true,
-      routes: [
-        '/',
-        '/blog',
-        '/portfolio',
-        '/contact'
-      ]
-    }
-  },
+  // // GitHub Pages deployment settings
+  // nitro: {
+  //   preset: 'github_pages',
+  //   prerender: {
+  //     failOnError: false,
+  //     crawlLinks: true,
+  //     routes: [
+  //       '/',
+  //       '/blog',
+  //       '/portfolio',
+  //       '/contact'
+  //     ]
+  //   }
+  // },
 
   // App Config
   app: {
