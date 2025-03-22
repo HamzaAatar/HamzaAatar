@@ -59,6 +59,26 @@
               loading="lazy"
             />
           </div>
+
+          <!-- Table of Contents -->
+          <div v-if="post._tocTree && post._tocTree.length > 0" class="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl mb-8 reveal">
+            <h2 class="text-lg font-semibold mb-4 flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+              </svg>
+              Table of Contents
+            </h2>
+            <nav class="toc">
+              <ul class="space-y-2">
+                <li v-for="link in post._tocTree" :key="link.id" :class="{ 'ml-4': link.depth > 2 }">
+                  <a :href="`#${link.id}`" class="text-primary-600 dark:text-primary-400 hover:underline flex items-center">
+                    <span v-if="link.depth > 2" class="w-2 h-0.5 bg-gray-300 dark:bg-gray-700 mr-2"></span>
+                    {{ link.text }}
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
           
           <!-- Content -->
           <div class="prose prose-lg dark:prose-invert mb-16">
@@ -343,11 +363,11 @@ useSeoMeta({
 }
 
 /* Reveal animation */
-/* .reveal {
+.reveal {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
-} */
+}
 
 .reveal.active {
   opacity: 1;
