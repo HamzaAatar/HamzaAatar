@@ -83,7 +83,7 @@
                       </div>
                       <div class="p-6">
                         <div class="flex items-center mb-3">
-                          <span class="inline-block px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-sm font-medium rounded-full">
+                          <span class="inline-block px-3 py-1 bg-primary-100 dark:bg-primary-500 text-primary-700 dark:text-white text-sm font-medium rounded-full">
                             {{ post.category }}
                           </span>
                           <span class="mx-2 text-gray-400 text-sm">•</span>
@@ -186,7 +186,7 @@
                   </div>
                   <button 
                     type="submit"
-                    class="w-full bg-white text-primary-600 font-medium py-3 px-4 rounded-lg hover:bg-white/90 transition"
+                    class="w-full bg-white text-primary-600 dark:text-primary-400 font-medium py-3 px-4 rounded-lg hover:bg-white/90 transition"
                   >
                     Subscribe
                   </button>

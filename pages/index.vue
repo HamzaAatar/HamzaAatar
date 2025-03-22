@@ -12,10 +12,10 @@
               I help businesses save time and money through custom automation solutions and data extraction services.
             </p>
             <div class="flex flex-wrap gap-4 animate-fade-in-up animation-delay-200">
-              <NuxtLink to="/portfolio" class="px-6 py-3 rounded-lg bg-primary-600 hover:bg-primary-700 text-white font-medium transition duration-300 shadow-lg hover:shadow-xl">
+              <NuxtLink to="/portfolio" class="px-6 py-3 rounded-lg bg-primary-600 hover:bg-primary-700 dark:bg-primary-400 text-white font-medium transition duration-300 shadow-lg hover:shadow-xl">
                 View My Work
               </NuxtLink>
-              <NuxtLink to="/contact" class="px-6 py-3 rounded-lg bg-white dark:bg-gray-800 text-primary-600 dark:text-primary-400 border border-primary-600 dark:border-primary-400 font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition duration-300">
+              <NuxtLink to="/contact" class="px-6 py-3 rounded-lg bg-white dark:bg-gray-800 text-primary-600 dark:text-primary-600 border border-primary-600 dark:border-primary-400 font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition duration-300">
                 Get in Touch
               </NuxtLink>
             </div>
@@ -223,13 +223,13 @@
     </section>
     
     <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-primary-600 to-secondary-600 dark:from-primary-800 dark:to-secondary-800">
+    <section class="py-20 bg-gradient-to-r from-primary-600 to-secondary-600 dark:from-primary-500 dark:to-secondary-800">
       <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 animate-fade-in-up">Ready to Streamline Your Business?</h2>
-        <p class="text-xl text-white text-opacity-90 mb-8 max-w-2xl mx-auto animate-fade-in-up animation-delay-100">
+        <h2 class="text-3xl md:text-4xl font-bold text-white dark:text-gray-700 mb-6 animate-fade-in-up">Ready to Streamline Your Business?</h2>
+        <p class="text-xl text-white dark:text-gray-700 text-opacity-90 mb-8 max-w-2xl mx-auto animate-fade-in-up animation-delay-100">
           Let's discuss how custom automation and data solutions can help your business save time and drive growth.
         </p>
-        <NuxtLink to="/contact" class="inline-block px-8 py-4 bg-white text-primary-600 font-bold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-in-up animation-delay-200">
+        <NuxtLink to="/contact" class="inline-block px-8 py-4 bg-white text-primary-600 dark:text-primary-400 font-bold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-in-up animation-delay-200">
           Get in Touch
         </NuxtLink>
       </div>

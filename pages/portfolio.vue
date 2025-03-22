@@ -20,7 +20,7 @@
             :class="[
               'px-4 py-2 rounded-lg font-medium transition-all',
               activeFilter === 'all' 
-                ? 'bg-primary-600 text-white'
+                ? 'bg-primary-600 dark:bg-primary-400 text-white'
                 : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
             ]" 
             @click="setFilter('all')"
@@ -31,7 +31,7 @@
             :class="[
               'px-4 py-2 rounded-lg font-medium transition-all',
               activeFilter === 'automation' 
-                ? 'bg-primary-600 text-white'
+                ? 'bg-primary-600 dark:bg-primary-400 text-white'
                 : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
             ]"
             @click="setFilter('automation')"
@@ -42,7 +42,7 @@
             :class="[
               'px-4 py-2 rounded-lg font-medium transition-all',
               activeFilter === 'scraping' 
-                ? 'bg-primary-600 text-white'
+                ? 'bg-primary-600 dark:bg-primary-400 text-white'
                 : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
             ]"
             @click="setFilter('scraping')"
@@ -53,7 +53,7 @@
             :class="[
               'px-4 py-2 rounded-lg font-medium transition-all',
               activeFilter === 'low-code' 
-                ? 'bg-primary-600 text-white'
+                ? 'bg-primary-600 dark:bg-primary-400 text-white'
                 : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
             ]"
             @click="setFilter('low-code')"
@@ -64,7 +64,7 @@
             :class="[
               'px-4 py-2 rounded-lg font-medium transition-all',
               activeFilter === 'bots' 
-                ? 'bg-primary-600 text-white'
+                ? 'bg-primary-600 dark:bg-primary-400 text-white'
                 : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
             ]"
             @click="setFilter('bots')"
@@ -103,7 +103,7 @@
               </div>
               
               <button 
-                class="w-full px-4 py-2 text-primary-600 dark:text-primary-400 border border-primary-600 dark:border-primary-400 rounded-lg font-medium hover:bg-primary-50 dark:hover:bg-primary-900/20 transition"
+                class="w-full px-4 py-2 text-primary-600 dark:text-primary-600 border border-primary-600 dark:border-primary-600 rounded-lg font-medium hover:bg-primary-50 dark:hover:bg-primary-900/20 transition"
                 @click="selectedProject = project"
               >
                 View Details
@@ -203,7 +203,7 @@
           </p>
           <NuxtLink 
             to="/contact" 
-            class="inline-block px-6 py-3 bg-primary-600 text-white rounded-lg font-medium hover:bg-primary-700 transition"
+            class="inline-block px-6 py-3 bg-primary-600 dark:bg-primary-400 text-white rounded-lg font-medium hover:bg-primary-700 transition"
           >
             Get in Touch
           </NuxtLink>
